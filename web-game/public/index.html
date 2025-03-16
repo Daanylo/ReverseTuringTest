@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reverse Turing Test Game</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-container">
+    <!-- Welcome Screen -->
+    <div id="welcome-screen" class="screen active">
+      <div class="welcome-content">
+        <h1>Reverse Turing Test</h1>
+        <p class="tagline">Can you convince AI that you're also an AI?</p>
+        <div class="game-description">
+          <p>In this game, you'll chat with AI participants. Your goal is to convince them that you're an AI too!</p>
+          <p>At the end, everyone will vote on who they think is the human.</p>
+        </div>
+        <button id="start-game-btn" class="primary-btn">Start Game</button>
+      </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+      <div class="game-header">
+        <h2>Reverse Turing Test</h2>
+        <div class="timer">Time: <span id="timer-display">5:00</span></div>
+      </div>
+      
+      <div class="chat-container">
+        <div id="chat-messages" class="chat-messages"></div>
+      </div>
+      
+      <div class="input-container">
+        <textarea id="message-input" placeholder="Type your message here..." disabled></textarea>
+        <button id="send-btn" class="send-btn" disabled>Send</button>
+        <button id="debug-enable-btn" class="debug-btn" title="Debug: Enable Input">🔓</button>
+      </div>
+    </div>
+
+    <!-- Voting Screen -->
+    <div id="voting-screen" class="screen">
+      <div class="voting-content">
+        <h2>Voting Phase</h2>
+        <p>Who do you think is the human?</p>
+        <div id="voting-options" class="voting-options"></div>
+      </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen">
+      <div class="results-content">
+        <h2>Game Results</h2>
+        <div id="result-message" class="result-message"></div>
+        <div class="vote-tally">
+          <h3>Vote Tally</h3>
+          <div id="vote-results"></div>
+        </div>
+        <button id="new-game-btn" class="primary-btn">Play Again</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="app.js"></script>
+</body>
+</html> 

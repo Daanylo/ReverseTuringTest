@@ -2,7 +2,7 @@
 
 # Ollama API settings
 OLLAMA_API_URL = "http://localhost:11434/api/generate"
-MODEL_NAME = "llama3.1:latest"
+MODEL_NAME = "gemma3:12b"
 
 # Game settings
 NUM_AI_PARTICIPANTS = 4  # Number of AI participants
